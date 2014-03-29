@@ -320,6 +320,20 @@ describe('#fninvoke', function () {
 		});
 	});
 
+	it('should override with local object keys in injector', function (done) {
+		var o = {
+				a: Math.random()
+			},
+			invoker = fninvoke(mockGetServie(o));
+
+		invoker(function (a) {
+			a.should.be.equal('fubar');
+			done();
+		}, null, {
+			a: 'fubar'
+		});
+	});
+
 	it('should use function.apply when a scope object is provided', function (done) {
 		//Same test as above, but uses diffrent code path in code logic. Because 100% code coverage is nice.
 		var o = {

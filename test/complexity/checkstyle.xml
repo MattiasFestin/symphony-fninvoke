@@ -4,13 +4,24 @@
 <file name="src/main.js">
   
   <error
-    line="7"
+    line="5"
     severity="warning"
-    message="Cyclomatic: 6,
-    Halstead: 71.500
-    | Effort: 1.2510e+5
-    | Volume: 1749.6
-    | Vocabulary: 50"
+    message="Cyclomatic: 2,
+    Halstead: 50.794
+    | Effort: 65197
+    | Volume: 1283.6
+    | Vocabulary: 28"
+    source="invokeFn"
+    />
+  
+  <error
+    line="50"
+    severity="warning"
+    message="Cyclomatic: 7,
+    Halstead: 21.375
+    | Effort: 11526
+    | Volume: 539.23
+    | Vocabulary: 42"
     source="invokeInner"
     />
   

@@ -3,14 +3,24 @@
 <file name="src/main.js">
   
   <issue
-    line="7"
+    line="5"
+    char="invokeFn"
+    evidence="invokeFn is too complicated"
+    reason="Cyclomatic: 2,
+    Halstead: 50.794
+    | Effort: 65197
+    | Volume: 1283.6
+    | Vocabulary: 28" />
+  
+  <issue
+    line="50"
     char="invokeInner"
     evidence="invokeInner is too complicated"
-    reason="Cyclomatic: 6,
-    Halstead: 71.500
-    | Effort: 1.2510e+5
-    | Volume: 1749.6
-    | Vocabulary: 50" />
+    reason="Cyclomatic: 7,
+    Halstead: 21.375
+    | Effort: 11526
+    | Volume: 539.23
+    | Vocabulary: 42" />
   
 </file>
 </jslint>
