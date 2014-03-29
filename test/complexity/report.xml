@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jslint>
+<file name="src/main.js">
+  
+  <issue
+    line="7"
+    char="invokeInner"
+    evidence="invokeInner is too complicated"
+    reason="Cyclomatic: 6,
+    Halstead: 71.500
+    | Effort: 1.2510e+5
+    | Volume: 1749.6
+    | Vocabulary: 50" />
+  
+</file>
+</jslint>
