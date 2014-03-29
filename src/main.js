@@ -2,23 +2,26 @@
 
 var annotate = require('symphony-fnannotate');
 
-//TODO add generic type from function
 module.exports = function invoke(getService) {
 	return function invokeInner(fn, self, locals) {
 		var args = [],
+			fnIsArray =  Array.isArray(fn),
 			$inject = annotate(fn),
-			length = $inject.length,
-			key;
+			key,
+			length = fnIsArray ? fn.length - 1		: $inject.length,
+			argArr = fnIsArray ? fn.slice(0, -1)	: $inject;
 
 		for (var i = 0; i < length; i++) {
-			key = $inject[i];
+			key = argArr[i];
+
 			if (typeof key !== 'string') {
 				throw new Error('Incorrect injection token! Expected service name as string, got ' + key);
 			}
+			
 			args.push(locals && locals.hasOwnProperty(key) ? locals[key] : getService(key));
 		}
-		if (!fn.$inject) {
-			// this means that we must be an array.
+
+		if (fnIsArray) {
 			fn = fn[length];
 		}
 
