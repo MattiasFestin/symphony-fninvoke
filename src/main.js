@@ -65,7 +65,7 @@ module.exports = function invoke(getService) {
 				throw new Error('Incorrect injection token! Expected service name as string, got ' + key);
 			}
 			
-			args.unshift(locals && key in locals ? locals[key] : getService(key, locals));
+			args.unshift(locals && locals.hasOwnProperty(key) ? locals[key] : getService(key));
 		}
 
 		return invokeFn(fn, args, self);
