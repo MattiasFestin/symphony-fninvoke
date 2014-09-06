@@ -1,6 +1,6 @@
 {
   "name": "symphony-fninvoke",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Angular.js function invoker",
   "main": "./src/main.js",
   "directories": {
